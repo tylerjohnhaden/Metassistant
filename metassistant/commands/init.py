@@ -10,6 +10,10 @@ settings_injection = """\n
 \"\"\"****************************************************************\"\"\"
 \"\"\" This section of the settings.py file was added by Metassistant \"\"\"
 
+import sys
+
+# required to access metassistant package
+sys.path.insert(0, os.path.join(BASE_DIR, os.pardir, os.pardir))
 import metassistant
 
 # set templates to Metassistant's apps directory
@@ -79,5 +83,7 @@ even though "django-admin" returned successfully.'''
     with open(os.path.join(metassistant.PATH, 'metaproject', 'metaproject', 'urls.py'), 'a') as settings_file:
         settings_file.write(urls_injection)
 
-    # add default app
-    return app(Namespace(name='starter_app'))
+    # create apps directory
+    os.mkdir(os.path.join(metassistant.PATH, os.pardir, 'apps'))
+
+    return 'All good'

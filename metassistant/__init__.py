@@ -3,6 +3,7 @@ import os
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
+
 def settings(**kwargs):
     if 'INSTALLED_APPS' in kwargs:
         # todo: add config state check
