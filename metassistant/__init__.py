@@ -20,4 +20,4 @@ def urls():
 
 
 def get_apps():
-    return os.listdir(os.path.join(__file__, os.pardir, os.pardir, 'apps'))
+    return os.listdir(os.path.join(os.path.dirname(__file__), os.pardir, 'apps'))
