@@ -9,3 +9,7 @@ local_settings.py
 
 # JetBrains
 .idea/
+
+# Metassistant components
+apps/
+metassistant/metaproject/
